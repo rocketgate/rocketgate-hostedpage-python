@@ -69,8 +69,6 @@ urlStuff.Set("country", "US")
 urlStuff.Set("currency", "USD")
 urlStuff.Set("3DS", "true")
 
-urlStuff.Set("acct", "70")
-
 str = urlStuff.Encode()
 
 rg_config.testMode = False
