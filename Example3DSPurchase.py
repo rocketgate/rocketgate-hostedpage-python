@@ -71,7 +71,6 @@ urlStuff.Set("3DS", "true")
 
 str = urlStuff.Encode()
 
-rg_config.testMode = False
 link = rg_config.RG_LINK() + str
 
 print('Cache-Control: no-cache')
