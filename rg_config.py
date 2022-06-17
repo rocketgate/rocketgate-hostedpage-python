@@ -21,7 +21,7 @@ def RG_MERCHANT_ID():
     return 1
 
 def RG_GW_PASSWORD():
-    return 'CHANGETHISVALUE'
+    return 'testpassword'
 
 def RG_HASH_SECRET():
     return 'hashsecret'
@@ -46,7 +46,7 @@ def RG_DB_USERNAME():
     return 'rg_demouser'
 
 def RG_DB_PASSWORD():
-    return '3mpGsdfljsfjslf2r8'
+    return 'CHANGETHISVALUE'
 
 # Set to FALSE for production, TRUE for Testing/Dev.
 def RG_TEST_MODE():
