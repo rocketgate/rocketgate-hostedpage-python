@@ -5,7 +5,7 @@ import sys
 '''
  *
  * Copyright notice:
- * (c) Copyright 2018 RocketGate
+ * (c) Copyright 2022 RocketGate
  * All rights reserved.
  *
  * The copyright notice must not be removed without specific, prior
@@ -32,30 +32,16 @@ import sys
 '''
 
 import rg_config
-from rg_config import RG_MERCHANT_URL
-from rg_config import RG_MERCHANT_LOGIN_URL
-from rg_config import RG_MERCHANT_ID
-from rg_config import RG_GW_PASSWORD
-from rg_config import RG_HASH_SECRET
-from rg_config import RG_MERCHANT_PASSWORD_SALT
-from rg_config import RG_DB_SERVER
-from rg_config import RG_DB_NAME
-from rg_config import RG_DB_USERNAME
-from rg_config import RG_DB_PASSWORD
-from rg_config import RG_TEST_MODE
-from rg_config import RG_LINK
+from LinkBuilder import LinkBuilder
 
-import LinkBuilder
-from LinkBuilder import *
-
-myKey = "hashsecret"
+myKey = rg_config.RG_HASH_SECRET()
 time = rg_config.uniqueTimeStamp()
 
 urlStuff = LinkBuilder(myKey)
 
 urlStuff.Set("id", time + ".PythonTest")
-urlStuff.SetNumber("merch", "1")
-urlStuff.SetNumber("amount", 1.01)
+urlStuff.SetNumber("merch", rg_config.RG_MERCHANT_ID())
+urlStuff.SetNumber("amount", 1.00)
 urlStuff.Set("invoice", time + ".SaleTest")
 
 urlStuff.Set("purchase", "TRUE")
@@ -70,11 +56,11 @@ urlStuff.Set("zip", "89141")
 urlStuff.Set("country", "US")
 urlStuff.Set("currency", "USD")
 
-str = urlStuff.Encode()
+link = urlStuff.Encode()
 
-link = RG_LINK() + str
+url = rg_config.RG_LINK() + link
 
 print('Cache-Control: no-cache')
-print('Location:', link, '\n')
+print('Location:', url, '\n')
 
 urlStuff.debugPrint()

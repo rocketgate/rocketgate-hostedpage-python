@@ -1,5 +1,6 @@
 '''
 Created on Apr 18, 2019
+Revised on June 17, 2022
 
 Language: Python
 
@@ -20,7 +21,7 @@ def RG_MERCHANT_ID():
     return 1
 
 def RG_GW_PASSWORD():
-    return 'testpassword'
+    return 'CHANGETHISVALUE'
 
 def RG_HASH_SECRET():
     return 'hashsecret'
@@ -31,7 +32,7 @@ Modify this to your own value
 '''
 
 def RG_MERCHANT_PASSWORD_SALT():
-    return 'sdfj0j80hssflhjsfh8sfh8sgo2'
+    return 'CHANGETHISVALUE'
 
 # Local Database Configs
 
@@ -64,8 +65,7 @@ else:
 RocketGate requires a response to this postback.  
 This function provides a properly formatted response message.
 
-'results' indicates success or failure. A value of 0 indicates the server has received, parsed and processed the postback.
-          A non-zero value indicates that an error occurred.
+'results' indicates success or failure. A value of 0 indicates the server has received, parsed and processed the postback. A non-zero value indicates that an error occurred.
 'message' is an optional value that could be used to pass an error description which can be used in debugging the error.
 
 '''

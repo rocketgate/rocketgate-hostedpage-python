@@ -3,10 +3,10 @@ from encodings.base64_codec import base64_decode
 
 import hashlib
 import urllib.parse
+
 '''
- 
   Copyright notice:
-  (c) Copyright 2019 RocketGate
+  (c) Copyright 2022 RocketGate
   All rights reserved.
  
   The copyright notice must not be removed without specific, prior
